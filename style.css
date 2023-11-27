@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #090c31;
+  display: flex;
+  flex-direction: column; /* Cambiado a flex-direction: column */
+  align-items: center; /* Alineado al extremo izquierdo */
+  transition: 0.7s ease all;
+}
+body.dark {
+  background-color: wheat;
+}
+
+/* boton switch */
+.switch {
+  background-color: wheat;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  margin-top: 100px;
+  margin-bottom: 70px;
+}
+.switch::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: white;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: 0.3s ease all;
+  box-shadow: #0d0e15;
+}
+.switch.active {
+  background: rgb(13, 28, 87);
+  color: white;
+}
+.switch.active::after {
+  right: 0;
+  left: unset;
+}
+.switch span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: none;
+  color: rgb(0, 0, 0);
+}
+body.dark .switch span {
+  color: rgb(255, 255, 255);
+}
+
+/* calculadora */
+.contendor {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+}
+
+.calculadora {
+  background-color: rgb(18, 29, 78);
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 350px;
+  max-width: 100%;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  gap: 0.5rem;
+}
+body.dark .calculadora {
+  background: rgb(222, 163, 138);
+}
+
+.pantalla {
+  grid-column: 1/-1;
+  background-color: #090c31;
+  padding: 1.5rem;
+  font-size: 2rem;
+  text-align: right;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: monospace;
+  font-weight: 600;
+}
+body.dark .pantalla {
+  background: wheat;
+  color: black;
+}
+
+.btn {
+  background-color: rgb(18, 29, 78);
+  color: white;
+  border: 0;
+  padding: 1.5rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+body.dark .btn {
+  background: rgb(222, 163, 138);
+  color: black;
+}
+
+.btn:hover {
+  background-color: #090c31;
+}
+
+#cero {
+  grid-column: span 2;
+}
+
+#igual {
+  grid-row: span 2;
+  background-color: #e6394a;
+}
+
+#igual:hover {
+  background-color: #e65766;
+}
+
+/*# sourceMappingURL=style.css.map */
